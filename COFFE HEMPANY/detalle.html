@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Detalle del producto - Coffee Hempany</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+    <section class="detalle-producto">
+
+        <!-- IMAGEN -->
+        <div class="detalle-imagen">
+           <img id="detalleImagen" 
+            src="" 
+             alt="Producto">   
+
+        </div>
+
+        <!-- INFORMACIÓN -->
+        <div class="detalle-informacion">
+
+            <p class="detalle-subtitulo">
+                COFFEE HEMPANY
+            </p>
+
+            <h1 id="detalleNombre">
+                Producto
+            </h1>
+
+            <p id="detalleDescripcion">
+                Descripción del producto
+            </p>
+
+            <div class="detalle-precio">
+
+                <span>Precio</span>
+
+                <strong id="detallePrecio">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <div class="detalle-botones">
+
+                <button onclick="window.close()">
+                    Volver
+                </button>
+
+                <button>
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        const producto = JSON.parse(
+            localStorage.getItem("productoSeleccionado")
+        );
+
+
+        if (producto) {
+
+            document.getElementById("detalleImagen").src =
+                producto.imagen;
+
+            document.getElementById("detalleImagen").alt =
+                producto.nombre;
+
+            document.getElementById("detalleNombre").textContent =
+                producto.nombre;
+
+            document.getElementById("detalleDescripcion").textContent =
+                producto.descripcion;
+
+            document.getElementById("detallePrecio").textContent =
+                producto.precio;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
